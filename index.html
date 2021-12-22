@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500;0,700;0,800;1,500;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | NFT preview card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Outfit;
+      }
+      /* Main Body */
+      .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: hsl(217, 54%, 11%);
+      }
+      /* Main Card */
+      .card {
+        width: 300px;
+        height: 70vh;
+        margin: 15vh auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: hsl(216, 50%, 16%);
+        padding: 20px;
+        border-radius: 10px;
+        position: relative;
+      }
+
+      .imgWithOverlay {
+        height: 40vh;
+        width: 100%;
+        border-radius: 10px;
+        position: relative;
+      }
+
+      .overlay {
+        display: none;
+      }
+
+      .imgWithOverlay:hover .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s ease;
+        border-radius: 10px;
+        background-color: rgba(12, 207, 224, 0.5);
+      }
+      .imgWithOverlay:hover .overlay > img {
+        width: 45px;
+        height: 45px;
+      }
+
+      /* Bottom Card */
+      .card_bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 25vh;
+      }
+
+      .card_bottom > h3 {
+        color: white;
+        font-weight: 600px;
+      }
+
+      .card_bottom > h3:hover {
+        color: rgb(12, 207, 224);
+        font-weight: 600px;
+      }
+
+      .card_bottom > p {
+        color: rgb(139, 139, 150);
+      }
+
+      .card_bottom_center {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 400px;
+      }
+
+      .card_bottom_center div:first-child {
+        display: flex;
+        justify-content: center;
+      }
+
+      .card_bottom_center div:first-child > span {
+        color: rgb(12, 207, 224);
+        padding-left: 5px;
+        background-color: hsl(216, 50%, 16%);
+      }
+
+      .child {
+        display: flex;
+        justify-content: center;
+        background-color: hsl(216, 50%, 16%);
+      }
+
+      .child > span {
+        background-color: hsl(216, 50%, 16%);
+        color: rgb(139, 139, 150);
+        padding-left: 5px;
+      }
+
+      .card_bottom_bottom {
+        display: flex;
+        align-items: center;
+        padding: 10px 0px;
+        color: hsl(215, 32%, 27%);
+        border-top: 2px solid;
+      }
+
+      .card_bottom_bottom > img {
+        border: 2px solid rgb(209, 205, 205);
+        border-radius: 50%;
+      }
+
+      .card_bottom_bottom > p {
+        color: rgb(139, 139, 150);
+        padding: 0px 10px;
+      }
+
+      .card_bottom_bottom > span {
+        color: rgb(209, 205, 205);
+      }
+
+      .card_bottom_bottom > span:hover {
+        color: rgb(12, 207, 224);
+      }
+
+      @media screen and (max-width: 375px) {
+        .imgWithOverlay > img {
+          height: 40vh;
+          width: 100%;
+          border-radius: 10px;
+        }
+      }
+      @media screen and (min-width: 375px) {
+        .imgWithOverlay > img {
+          height: 100%;
+          width: 100%;
+          border-radius: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="card">
+        <div class="imgWithOverlay">
+          <img src="./images/image-equilibrium.jpg" alt="image" />
+          <div class="overlay">
+            <img src="images/icon-view.svg" alt="image" />
+          </div>
+        </div>
+
+        <div class="card_bottom">
+          <h3>Equilibrium #3429</h3>
+          <p>Our Equilibrium collection promotes balance and calm.</p>
+          <div class="card_bottom_center">
+            <div>
+              <img src="images/icon-ethereum.svg" />
+              <span>0.041 ETH</span>
+            </div>
+            <div class="child">
+              <img src="images/icon-clock.svg" />
+              <span>3 days left</span>
+            </div>
+          </div>
+
+          <div class="card_bottom_bottom">
+            <img src="images/image-avatar.png" height="40px" width="40px" />
+
+            <p>Creation of</p>
+            <span>Jules Wyvern</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Prom</a>.
+    </div>
+  </body>
+</html>
